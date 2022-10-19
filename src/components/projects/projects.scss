@@ -1,0 +1,119 @@
+$project-width : 800px;
+$project-height : 600px;
+
+.projects {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        position: relative;
+        width: 800px;
+        min-height: 100vh;
+        color: black;
+
+        .project {
+            position: relative;
+            width: 100%;
+            height: $project-height;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+            
+            .img {
+
+                position: relative;
+                width: 45%;
+                height: 100%;
+                border: 1px solid gray;
+                overflow: scroll;
+                img {
+                    width : 100%;
+                    //height : 100%;
+                    object-fit: fill;
+                    object-position : top;
+                    z-index: 0;
+                }
+                .more {
+                    position: absolute;
+                    top : 0;
+                    left : 0;
+                    background: black;
+                    z-index: 1;
+                }
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .text {
+                position: relative;
+                width: 45%;
+                min-height: $project-height;
+
+                .datas {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    padding : 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .data {
+                        margin : 12px 0;
+                        h2 {
+                            font-size : 20px;
+                            margin-bottom : 6px;
+                        }
+                        div {
+                            font-size : 14px;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(2n + 1) {
+                .img {
+                    order: 1;
+                }
+
+                .text {
+                    order: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 900px) {
+    .project {
+        position: relative;
+        min-height: ($project-height * 2) + 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+            width : 100% !important;
+            height : $project-height !important;
+            order : 0 !important;
+            margin-bottom : 1rem;
+        }
+
+        .text {
+            width : 100% !important;
+            min-height : $project-height + 50px !important;
+            order : 1 !important;
+
+            p {
+
+            }
+        }
+    }
+}

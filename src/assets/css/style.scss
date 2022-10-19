@@ -1,0 +1,32 @@
+$footer-height : 400px;
+
+.home {
+    width : 100%;
+    min-height: 100vh;
+}
+footer {
+    position: relative;
+    width : 100%;
+    height : $footer-height;
+    padding : 30px;
+    background: black;
+    color : white;
+    
+    .content {
+        max-width : 800px;
+        margin : 0 auto;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p {
+                @extend .left;
+                margin-top : 1rem;
+                span {
+                    letter-spacing: 1.5;
+                }
+            }
+        }
+    }
+}
