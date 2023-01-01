@@ -3,6 +3,7 @@ import Home from 'pages/home';
 import './App.css';
 
 function App() {
+  const testcode = "";
   const { pathname } = window.location;
   let view = <Home/>;
   if(pathname !== "/") {
